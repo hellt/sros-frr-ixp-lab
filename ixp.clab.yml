@@ -1,0 +1,37 @@
+name: ixp
+
+topology:
+  nodes:
+    sros:
+      kind: vr-nokia_sros
+      image: sros:23.3.R1
+      license: sros-license.key
+      startup-config: sros.partial.cfg
+    frr:
+      kind: linux
+      image: quay.io/frrouting/frr:8.4.1
+      binds:
+        - frr.conf:/etc/frr/frr.conf
+        - frr-daemons.cfg:/etc/frr/daemons
+    openbgpd:
+      kind: linux
+      image: quay.io/openbgpd/openbgpd:7.9
+      binds:
+        - openbgpd.conf:/etc/bgpd/bgpd.conf
+      exec:
+        - "ip address add dev eth1 192.168.0.3/24"
+    bird:
+      kind: linux
+      image: ghcr.io/srl-labs/bird:2.0.11
+      binds:
+        - bird.conf:/usr/local/etc/bird.conf
+      exec:
+        - "ip address add dev eth1 192.168.0.4/24"
+    ixp-net:
+      kind: bridge
+
+  links:
+    - endpoints: ["sros:eth1", "ixp-net:sros-eth1"]
+    - endpoints: ["frr:eth1", "ixp-net:frr-eth1"]
+    - endpoints: ["openbgpd:eth1", "ixp-net:obgpd-eth1"]
+    - endpoints: ["bird:eth1", "ixp-net:bird-eth1"]
