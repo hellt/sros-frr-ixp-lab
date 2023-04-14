@@ -12,3 +12,4 @@
 * [IXP Lab by NSRC](https://nsrc.org/workshops/2021/riso-pern-apan51/networking/routing-security/en/labs/ixp.html)
 * [ARouteServer](https://github.com/pierky/arouteserver)
 * [bgpq4](https://github.com/bgp/bgpq4)
+* [RPKI docs by NLNetLabs](https://rpki.readthedocs.io/en/latest/about/introduction.html)
