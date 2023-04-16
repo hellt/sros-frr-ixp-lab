@@ -31,7 +31,7 @@ topology:
       kind: bridge
 
   links:
-    - endpoints: ["peer1:eth1", "ixp-net:peer1-eth1"]
-    - endpoints: ["peer2:eth1", "ixp-net:peer2-eth1"]
-    - endpoints: ["rs1:eth1", "ixp-net:rs1-eth1"]
-    - endpoints: ["rs2:eth1", "ixp-net:rs2-eth1"]
+    - endpoints: ["peer1:eth1", "ixp-net:port1"]
+    - endpoints: ["peer2:eth1", "ixp-net:port2"]
+    - endpoints: ["rs1:eth1", "ixp-net:port3"]
+    - endpoints: ["rs2:eth1", "ixp-net:port4"]
