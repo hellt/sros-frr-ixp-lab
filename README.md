@@ -2,4 +2,4 @@
 
 A containerlab-based lab designed to offer hands-on experience with IXP technologies and best practices.
 
-Lab documentation is available at <https://containerlab.dev/lab-examples/ixp-lab/>
+Lab documentation is available at <https://containerlab.dev/lab-examples/peering-lab/>

@@ -22,9 +22,9 @@ topology:
         - "ip address add dev eth1 192.168.0.3/24"
     rs2: # route server #2
       kind: linux
-      image: ghcr.io/srl-labs/bird:2.0.11
+      image: ghcr.io/srl-labs/bird:2.13
       binds:
-        - configs/bird.conf:/usr/local/etc/bird.conf
+        - configs/bird.conf:/etc/bird.conf
       exec:
         - "ip address add dev eth1 192.168.0.4/24"
     ixp-net:
